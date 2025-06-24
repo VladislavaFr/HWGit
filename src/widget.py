@@ -9,5 +9,6 @@ def mask_account_card(name_and_number_of_card: str) -> str | None:
 
 
 
-def get_date():
-    pass
+def get_date(user_date):
+    only_date = user_date[0:10]
+    print(f"{only_date[8:10]}.{only_date[5:7]}.{only_date[0:4]}")

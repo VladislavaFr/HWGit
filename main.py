@@ -20,3 +20,6 @@ acc1 = "Maestro 1596837868705199"
 mask_acc1 = mask_account_card(acc1)
 acc2 = "Visa Classic 6831982476737658"
 mask_acc2 = mask_account_card(acc2)
+
+date1 = "2024-03-11T02:26:18.671407"
+sort_date = get_date(date1)
