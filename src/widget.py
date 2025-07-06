@@ -1,6 +1,7 @@
 from src.masks import get_mask_account, get_mask_card_number
 from datetime import datetime
 
+
 def mask_account_card(name_and_number_of_card: str) -> str:
     """Функция маскировки имени и номера/счета банковской карты"""
     string_split = name_and_number_of_card.split(" ")
