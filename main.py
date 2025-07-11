@@ -1,3 +1,4 @@
+
 from src.masks import get_mask_account
 from src.masks import get_mask_card_number
 from src.processing import sort_by_date
@@ -18,3 +19,4 @@ for item in sort_by_date(operations):
 print("По возрастанию:")
 for item in sort_by_date(operations, reverse=False):
     print(item)
+
