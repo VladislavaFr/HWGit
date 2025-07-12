@@ -6,7 +6,7 @@ authors = [
     {name = "VladislavaFn",email = "vladislava.fridmann1@aol.com"}
 ]
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.11"
 dependencies = [
 ]
 
@@ -25,6 +25,10 @@ pytest = "^8.4.1"
 
 [tool.poetry.group.dev.dependencies]
 pytest-cov = "^6.2.1"
+pytest = "^8.4.1"
+flake8 = "^7.3.0"
+black = "^25.1.0"
+mypy = "^1.16.1"
 
 [tool.mypy]
 disallow_untyped_defs = true
