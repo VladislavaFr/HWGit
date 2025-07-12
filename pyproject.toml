@@ -1,5 +1,5 @@
 [project]
-name = "poetryhw"
+name = "banking-data-processor"
 version = "0.1.0"
 description = ""
 authors = [
@@ -10,6 +10,13 @@ requires-python = ">=3.11"
 dependencies = [
 ]
 
+
+[tool.poetry]
+name = "banking-data-processor"
+version = "0.1.0"
+description = ""
+authors = ["VladislavaFn vladislava.fridmann1@aol.com"]
+packages = [{ include = "src" }]
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
