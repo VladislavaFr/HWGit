@@ -1,11 +1,14 @@
-def filter_by_currency(transactions: list[dict], currency_code: str):
-    """
-    Генератор, который возвращает транзакции только с указанной валютой.
+from typing import Iterator, List, Dict, Any
 
-    :param transactions: список словарей с транзакциями
-    :param currency_code: код валюты, например 'USD'
-    :yield: транзакции, где валюта соответствует currency_code
+
+def filter_by_currency(transactions: List[Dict[str, Any]], currency_code: str) -> Iterator[Dict[str, Any]]:
     """
-    for tx in transactions:
-        if tx.get("operationAmount", {}).get("currency", {}).get("code") == currency_code:
-            yield tx
+    Фильтрует транзакции по заданному коду валюты и возвращает итератор.
+
+    :param transactions: Список транзакций (каждая — словарь)
+    :param currency_code: Код валюты (например, "USD")
+    :return: Итератор с транзакциями, где код валюты соответствует заданному
+    """
+    for transaction in transactions:
+        if transaction.get("operationAmount", {}).get("currency", {}).get("code") == currency_code:
+            yield transaction
