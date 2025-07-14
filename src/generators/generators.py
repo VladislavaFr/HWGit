@@ -1,14 +1,12 @@
 from typing import Iterator, List, Dict, Any
 
 
-def filter_by_currency(transactions: List[Dict[str, Any]], currency_code: str) -> Iterator[Dict[str, Any]]:
+def transaction_descriptions(transactions: List[Dict[str, Any]]) -> Iterator[str]:
     """
-    Фильтрует транзакции по заданному коду валюты и возвращает итератор.
+    Генератор, который поочередно возвращает описания транзакций.
 
     :param transactions: Список транзакций (каждая — словарь)
-    :param currency_code: Код валюты (например, "USD")
-    :return: Итератор с транзакциями, где код валюты соответствует заданному
+    :return: Итератор строк с описаниями операций
     """
     for transaction in transactions:
-        if transaction.get("operationAmount", {}).get("currency", {}).get("code") == currency_code:
-            yield transaction
+        yield transaction.get("description", "")
