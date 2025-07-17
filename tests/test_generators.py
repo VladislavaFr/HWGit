@@ -24,10 +24,14 @@ def test_transaction_descriptions(sample_transactions):
 
 
 def test_card_number_generator():
-    start = 1000
-    stop = 1003
+    start = 1
+    stop = 4
     result = list(card_number_generator(start, stop))
-    expected = ["****   1000", "****   1001", "****   1002"]
+    expected = [
+        "0000 0000 0000 0001",
+        "0000 0000 0000 0002",
+        "0000 0000 0000 0003"
+    ]
     assert result == expected
 
 

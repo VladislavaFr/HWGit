@@ -32,14 +32,15 @@ def transaction_descriptions(transactions: List[Dict]) -> Iterator[str]:
 
 def card_number_generator(start: int, stop: int) -> Iterator[str]:
     """
-    Генерирует номера карт в заданном диапазоне с маскировкой.
+    Генерирует номера банковских карт в формате XXXX XXXX XXXX XXXX.
 
     Args:
-        start (int): Начальное число (включительно).
-        stop (int): Конечное число (исключительно).
+        start (int): Начальное значение (включительно).
+        stop (int): Конечное значение (исключительно).
 
     Yields:
-        str: Номер карты в формате "****   XXXX", где XXXX — последние 4 цифры.
+        str: Номер карты в формате '0000 0000 0000 XXXX' и т.д.
     """
     for num in range(start, stop):
-        yield f"****   {str(num)[-4:]}"
+        card = f"{num:016d}"  # 16-значное число с ведущими нулями
+        yield f"{card[:4]} {card[4:8]} {card[8:12]} {card[12:]}"
