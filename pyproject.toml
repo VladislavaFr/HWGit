@@ -50,3 +50,6 @@ force_single_line = true
 [tool.black]
 line-length = 119
 exclude = ".git"
+
+[tool.pytest.ini_options]
+addopts = "--cov=src --cov-report=html"
