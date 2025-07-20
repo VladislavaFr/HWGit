@@ -6,6 +6,11 @@ import traceback
 
 
 def log(filename: Optional[str] = None) -> Callable:
+    """
+    Декоратор автоматически логирует начало и конец выполнения функции,
+    также логирует ее результаты и возникшие ошибки.
+    В 'filename' - записываются логи
+    """
     def decorator(func: Callable) -> Callable:
         @wraps(func)
         def wrapper(*args, **kwargs) -> Any:
